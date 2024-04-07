@@ -1,15 +1,20 @@
 {
   "name": "modpack-creator",
   "private": true,
+  "homepage": "https://iDasher.github.io",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages build",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
+    "gh-pages": "^6.1.1",
+    "netlify": "^13.1.14",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
