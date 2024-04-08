@@ -16,20 +16,20 @@ function App() {
     <>
       <div>
         <a target="_blank">
-          <img src={sts_icon} className="logo" alt="Sts Icon" />
+          <img src={sts_icon} className="logo sts" alt="Sts Icon" />
         </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={mc_icon} className="logo react" alt="MC Icon" />
+        <a target="_blank">
+          <img src={mc_icon} className="logo mine" alt="MC Icon" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>ModPacker!</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 2)}>
           count is {count}
         </button> 
       </div>
       <p className="read-the-docs">
-        Welcome to my website
+        This will pack your mods, select a game to start
       </p>
     </>
   )
