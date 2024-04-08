@@ -4,8 +4,8 @@ import viteLogo from '/vite.svg'
 
 import sts_icon from './assets/Images/sts_icon.png'
 import mc_icon from './assets/Images/mc_icon.png'
-
-//import { sts_icon, mc_icon } from './assets/Images' //this shold add images 
+//chakra improts
+import { Heading } from '@chakra-ui/react';
 
 import './App.css'
 
@@ -22,12 +22,13 @@ function LandingPage({show}) {
         <a target="_blank">
           <img src={mc_icon} className="logo mine" alt="MC Icon" />
         </a>
+
       
-        <h1>ModPacker!</h1>
-        <p>
-          This will pack your mods, select a game to start
-        </p>
-        </div>
+        <Heading as = 'h1' fontFamily="Roboto Slab" fontWeight="bold" size="5xl" color="blue.500" _hover={{ color: 'green.500' }}>
+          Welcome To ModPacker!
+        </Heading>
+      
+       </div> 
         
     </>
   )
@@ -44,6 +45,7 @@ function MainContent({ show }) {
 
 function App() {
   const [showMainContent, setShowMainContent] = useState(false);
+  const [hideLandingPage, setHideLandingPage] = useState(false);
 
   useEffect(() => {
     // Simulate a delay before showing the main content
@@ -51,13 +53,31 @@ function App() {
       setShowMainContent(true);
     }, 3000); // 3000 milliseconds (3 seconds) delay
 
-    return () => clearTimeout(timeout);
+    // After the delay, hide the landing page
+    const hideTimeout = setTimeout(() => {
+      setHideLandingPage(true);
+    }, 2500); // 2500 milliseconds (2.5 second) delay
+
+    const fadeOutTimeout = setTimeout(() => {
+      const landingPage = document.querySelector('.landing-page');
+      if (landingPage) {
+        landingPage.classList.add('fade-out');
+      }
+    }, 2000); // 2000 milliseconds (2 second) delay
+
+
+    return () => {
+      clearTimeout(timeout);
+      clearTimeout(hideTimeout);
+      clearTimeout(fadeOutTimeout)
+    };
   }, []);
+
 
   return (
     <div className="app">
       <div className="background-gradient"></div> {/* Animated background gradient */}
-      <LandingPage show={!showMainContent} />
+      {!hideLandingPage && <LandingPage show />}
       <MainContent show={showMainContent} />
     </div>
   );
