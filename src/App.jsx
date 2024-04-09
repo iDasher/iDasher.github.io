@@ -5,8 +5,10 @@ import viteLogo from '/vite.svg'
 import sts_icon from './assets/Images/sts_icon.png'
 import mc_icon from './assets/Images/mc_icon.png'
 //chakra improts
-import { Heading } from '@chakra-ui/react';
+import { Heading, Box, Button, Input } from '@chakra-ui/react';
 
+//get cstom stff
+import  MyButton   from './Cui.jsx'
 import './App.css'
 
 
@@ -38,7 +40,11 @@ function MainContent({ show }) {
   return (
     <div className={`main-content ${show ? 'fade-in' : ''}`}>
       <h1>Main Content</h1>
-      {/* Add your main content here */}
+      <Box p={4}>
+        <Heading mb={4}>Select A Game</Heading>
+        <MyButton image={sts_icon} text="Slay The Spire" />
+        <MyButton image={mc_icon} text="Minecraft" />
+      </Box>
     </div>
   );
 }
