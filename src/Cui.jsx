@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Flex, Image, Text } from '@chakra-ui/react';
+import { Button, Flex, Image, Text } from '@chakra-ui/react'
 
-function MyButton({ image, text }) {
+function MyButton({ image, text, onClick}) {
   return (
-    <Button colorScheme="red" size="md">
+    <Button colorScheme="red" size="md" onClick = {onClick}>
       <Flex alignItems="center">
         <Image src={image} alt="Icon" boxSize="24px" mr={2} />
         <Text>{text}</Text>
