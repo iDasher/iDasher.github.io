@@ -26,6 +26,8 @@ const modsData = [
       image: packmaster_i
     },
 
+    
+
     {
       id: 3,
       name: "Mod The Spire",
@@ -40,7 +42,7 @@ const modsData = [
       name: "Downfall Expansion",
       requirements: ["Default Requirements"],
       conflicts: [],
-      traits: ["New Character","Total Conversion"],
+      traits: ["New Character","Total Conversion", "Bosses"],
       size: "Large",
       image: downfall
     },
@@ -63,6 +65,15 @@ const modsData = [
       image: lib
     },
 
+
+    {id: 7,
+      name: "Packmaster Expansion",
+      requirements: ["Default Requirements", "Packmaster"],
+      conflicts: [],
+      traits: ["New Character"],
+      size: "Small",
+      image: packmaster_i
+    },
 
     // Add more mod objects as needed
   ];
